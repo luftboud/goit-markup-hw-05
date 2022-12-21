@@ -430,7 +430,8 @@ footer .contact:focus {
   background-color: rgba(33, 150, 243, 0.9);
   transform: translateY(100%);
   transition-property: transform;
-  transition-duration: 1s;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .card-overlay .overlay-text {
   width: 322px;
@@ -538,19 +539,28 @@ footer .container {
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
   transition-property: opacity;
-  transition-duration: 0.5s;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .modal {
-  position: absolute;
+  /* position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 50%; */
   width: 100%;
   max-width: 528px;
   height: 100%;
   max-height: 581px;
   background-color: var(--white-color);
-  transform-origin: top left;
+  transform: scale(1) 
+  /* translate(-50%, -50%) */
+  ;
+  opacity: 1;
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .close-modal {
   position: absolute;
@@ -569,4 +579,7 @@ footer .container {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
+.backdrop.is-hidden .modal {
+  transform: scale(0);
 }
